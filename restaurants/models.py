@@ -17,3 +17,11 @@ class Food(models.Model):
 	
 	def __unicode__(self):
 		return self.name
+
+class Comment(models.Model):
+	content = models.CharField(max_length=225)
+	visitor = models.CharField(max_length=225)
+	email = models.EmailField(max_length=225)
+	date_time = models.DateTimeField()
+	restaurant = models.ForeignKey(Restaurant)
+	
